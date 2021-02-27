@@ -665,18 +665,18 @@ class CombiCard extends LitElement {
 }
 
 // customElements.define("combi-card-editor", CombiCardEditor);
-customElements.define('rain-card', CombiCard);
+customElements.define('neerslag-card', CombiCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-	type: "rain-card", //name of the card
-	name: "Rain Card",
+	type: "neerslag-card", //name of the card
+	name: "Neerslag Card",
 	preview: true, // Optional - defaults to false
-	description: "Show Precipitation Outlook (prognosed rainfall) using BuienAlarm and/or BuienRadar in one graph" // Optional
+	description: "Display rain forecast using BuienAlarm and/or BuienRadar data." // Optional
 });
 
 console.info(
-	`%c RAIN-CARD %c 2021.27.02.1`,
+	`%c NEERSLAG-CARD %c 2021.27.02.1`,
 	"Color: white; font-weight: bold; background: red;",
 	""
 );
