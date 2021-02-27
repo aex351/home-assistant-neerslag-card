@@ -1,7 +1,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs) ![GitHub all releases](https://img.shields.io/github/downloads/aex351/home-assistant-neerslag-card/total)
 
-# Rain Card
- Display precipitation forecast (prognosed rainfall) using BuienAlarm and/or BuienRadar data.
+# Neerslag Card
+ Display rain forecast using BuienAlarm and/or BuienRadar data.
 
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
@@ -20,14 +20,14 @@ Via the interface:
 
 #### Using one sensor:
 ```
-type: 'custom:combi-card'
-title: Rain
+type: 'custom:neerslag-card'
+title: Neerslag
 entity: sensor.buienalarm_regen_data_andere
 ```
 #### Using two sensors:
 ```
-type: 'custom:combi-card'
-title: Rain
+type: 'custom:neerslag-card'
+title: Neerslag
 entities:
   - sensor.buienalarm_regen_data_andere
   - sensor.buienradar_regen_data
