@@ -3,7 +3,7 @@
 # Rain Card
  Display precipitation forecast (prognosed rainfall) using BuienAlarm and/or BuienRadar data.
 
-![Example](/documentation/example.png)
+![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
 ## Installation
 The Rain Card uses custom sensors for data. The installation consist out of setting up the Rain Card and configuring the sensors.
