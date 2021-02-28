@@ -13,13 +13,12 @@
 
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
-
-
 ## Installation overview
-The Neerslag Card uses custom sensors for data. The installation consist out of setting up the Neerslag Card and configuring the sensors.
- 1) Adding the the Neerslag Card to your dashboard
- 2) Configuring the Buienalarm and/or Buienradar sensor (via `configuration.yaml`)
-> You will need to restart Home-Assistant after changing `configuration.yaml`.
+The Neerslag card installation consists out of two actions:
+1) Configuring the Buienalarm and/or Buienradar sensor (via `configuration.yaml`
+2) Adding the the Neerslag Card to your dashboard
+
+> Home Assistant needs to be restarted after making changes to `configuration.yaml`.
 
 ## 1. The Neerslag card
 Via the interface:
@@ -32,18 +31,18 @@ Via the interface:
 ```
 type: 'custom:neerslag-card'
 title: Neerslag
-entity: sensor.buienalarm_regen_data_andere
+entity: sensor.buienalarm_regen_data
 ```
 #### Using two sensors:
 ```
 type: 'custom:neerslag-card'
 title: Neerslag
 entities:
-  - sensor.buienalarm_regen_data_andere
+  - sensor.buienalarm_regen_data
   - sensor.buienradar_regen_data
 ```
 
- ## 2. Setup Buienalarm and/or Buienradar sensor
+ ## 2. Setup Buienalarm and/or Buienradar custom sensor
  These sensors are custom sensors that need to be configured in `configuration.yaml`.
  
  ## Buienalarm sensor configuration
@@ -53,10 +52,10 @@ entities:
 sensor:
   - platform: command_line
     command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=<lat-3-decimals>&lon=<lon-3-decimals>&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
-    name: Buienalarm_Regen_Data_Andere
+    name: Buienalarm_Regen_Data
     json_attributes:
       - data
-    value_template: 'last_changed: {{states.sensor.buienalarm_regen_data_andere.last_changed}}'
+    value_template: 'last_changed: {{states.sensor.buienalarm_regen_data.last_changed}}'
     scan_interval: 60
 ```
 
