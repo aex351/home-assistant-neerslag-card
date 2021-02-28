@@ -15,13 +15,13 @@
 
 
 
-## Installation
+## Installation overview
 The Neerslag Card uses custom sensors for data. The installation consist out of setting up the Neerslag Card and configuring the sensors.
  1) Adding the the Neerslag Card to your dashboard
  2) Configuring the Buienalarm and/or Buienradar sensor (via `configuration.yaml`)
 > You will need to restart Home-Assistant after changing `configuration.yaml`.
 
-## 1. The Neerslag Card
+## 1. The Neerslag card
 Via the interface:
 1) Go in to "Configure UI mode" on your dashboard
 2) Click on "Add Cards" and find the the "Neerslag card"
