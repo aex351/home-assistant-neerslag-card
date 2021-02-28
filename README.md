@@ -20,7 +20,7 @@ The Neerslag card installation consists out of two actions:
 
 > Home Assistant needs to be restarted after making changes to `configuration.yaml`.
 
-## 1. The Neerslag card
+## 1. Adding the the Neerslag Card to your dashboard
 Via the interface:
 1) Go in to "Configure UI mode" on your dashboard
 2) Click on "Add Cards" and find the the "Neerslag card"
