@@ -28,13 +28,13 @@ Via the interface:
 ### 1.1 Configuration options:
 
 #### Using one sensor:
-```
+```yaml
 type: 'custom:neerslag-card'
 title: Neerslag
 entity: sensor.buienalarm_regen_data
 ```
 #### Using two sensors:
-```
+```yaml
 type: 'custom:neerslag-card'
 title: Neerslag
 entities:
@@ -45,10 +45,10 @@ entities:
  ## 2. Setup Buienalarm and/or Buienradar custom sensor
  These sensors are custom sensors that need to be configured in `configuration.yaml`.
  
- ## Buienalarm sensor configuration
+ ### Buienalarm sensor configuration
  To add Buienalarm as custom sensor, add the following to `configuration.yaml`:
 
-```
+```yaml
 sensor:
   - platform: command_line
     command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=<lat-3-decimals>&lon=<lon-3-decimals>&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
@@ -64,9 +64,9 @@ sensor:
 
 
 
- ## Buienradar sensor configuration
+ ### Buienradar sensor configuration
  To add Buienradar as custom sensor, add the following to `configuration.yaml`:
-```
+```yaml
 sensor:
   - platform: command_line
     command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://gpsgadget.buienradar.nl/data/raintext?lat=<lat-2-decimals>&lon=<lon-2-decimals>&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":\"'+dataRequest+'\"}';    print(data);"
