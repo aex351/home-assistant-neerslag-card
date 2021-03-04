@@ -43,10 +43,10 @@ entities:
 ```
 
  ## 2. Setup Buienalarm and/or Buienradar custom sensor
- These sensors are custom sensors that need to be configured in `configuration.yaml`.
+ Custom sensors that need to be configured in `configuration.yaml`.
  
  ### Buienalarm sensor configuration
- To add Buienalarm as custom sensor, add the following to `configuration.yaml`:
+ Add the following to `configuration.yaml`:
 
 ```yaml
 sensor:
@@ -65,7 +65,7 @@ sensor:
 
 
  ### Buienradar sensor configuration
- To add Buienradar as custom sensor, add the following to `configuration.yaml`:
+ Add the following to `configuration.yaml`:
 ```yaml
 sensor:
   - platform: command_line
