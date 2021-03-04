@@ -5,25 +5,27 @@
 
  The graph will auto-scale (auto-zoom) depending on the amount of  rain. You can interact with the graph to see how much rain will fall on a specific moment. This card is fully functional on both  mobile as well as desktop.
 
-**Features**
+## Features
 * Display Buienalarm and/or Buienradar in one graph;
 * Fully functional on both desktop and mobile (includes mobile app);
+* Graph will auto zoom depending on the amount of rain;
 * Customizing the card title;
-* The graph contains Dutch language.
+* Hover with mouse / finger to read details of rain;
+* Dutch language.
 
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
 ## Installation overview
 The Neerslag card installation consists out of two actions:
 1) Adding the the Neerslag Card to your dashboard
-2) Configuring the Buienalarm and/or Buienradar sensor (via `configuration.yaml`
+2) Configuring the Buienalarm and/or Buienradar custom sensor via `configuration.yaml`
 
-> Home Assistant needs to be restarted after making changes to `configuration.yaml`.
+> Note: Home Assistant requires a restart after making changes in: `configuration.yaml`.
 
 ## 1. Adding the Neerslag Card to your dashboard
 Via the interface:
 1) Go in to "Configure UI mode" on your dashboard
-2) Click on "Add Cards" and find the the "Neerslag card"
+2) Click on "Add Cards" and find the "Neerslag card" in the list of cards
 
 ### 1.1 Configuration options:
 
@@ -43,7 +45,6 @@ entities:
 ```
 
  ## 2. Setup Buienalarm and/or Buienradar custom sensor
- Custom sensors that need to be configured in `configuration.yaml`.
  
  ### Buienalarm sensor configuration
  Add the following to `configuration.yaml`:
