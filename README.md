@@ -27,7 +27,7 @@ Via the interface:
 1) Go in to "Configure UI mode" on your dashboard
 2) Click on "Add Cards" and find the "Neerslag card" in the list of cards
 
-### 1.1 Configuration options:
+### Configuration options:
 
 #### Using one sensor:
 ```yaml
