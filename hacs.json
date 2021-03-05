@@ -3,5 +3,5 @@
     "render_readme": true,
     "country": ["NL", "BE"],
     "domains": ["sensor"],
-    "filename": "combi-card.js"
+    "filename": "neerslag-card.js"
 }
