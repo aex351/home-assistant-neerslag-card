@@ -65,6 +65,7 @@ sensor:
  * Replace `<lon-3-decimals>` with your longitude. For example: `5.000`
  > Attention: delete the `<>` characters. 
 
+
  ### Buienradar sensor configuration
  Add the following to `configuration.yaml`:
 ```yaml
@@ -85,10 +86,10 @@ sensor:
  Instead of manual configuring the latitude and longitude. There is an option to use the latitude and longitude that has been configured in Home Assistant.
 
  #### Buienalarm sensor configuration
- * Replace `<lat-3-decimals>` with your latitude. For example: `{{ state_attr("zone.home", "latitude") | round(3) }}`
- * Replace `<lon-3-decimals>` with your longitude. For example: `{{ state_attr("zone.home", "longitude") | round(3) }}`
+ * Replace `<lat-3-decimals>` with your latitude. For example: `{{state_attr("zone.home", "latitude") | round(3)}}`
+ * Replace `<lon-3-decimals>` with your longitude. For example: `{{state_attr("zone.home", "longitude") | round(3)}}`
  > Attention: delete the `<>` characters. 
  #### Buienradar sensor configuration
- * Replace `<lat-2-decimals>` with your latitude. For example: `{{ state_attr("zone.home", "latitude") | round(2) }}`
- * Replace `<lon-2-decimals>` with your longitude. For example: `{{ state_attr("zone.home", "longitude") | round(2) }}`
+ * Replace `<lat-2-decimals>` with your latitude. For example: `{{state_attr("zone.home", "latitude") | round(2)}}`
+ * Replace `<lon-2-decimals>` with your longitude. For example: `{{state_attr("zone.home", "longitude") | round(2)}}`
  > Attention: delete the `<>` characters.
