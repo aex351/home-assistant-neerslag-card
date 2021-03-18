@@ -11,7 +11,8 @@
 * Graph will auto zoom depending on the amount of rain;
 * Customizing the card title;
 * Hover with mouse / finger to read details of rain;
-* Dutch language.
+* Dutch language;
+* Use Home Assistant configured location.
 
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
@@ -57,13 +58,12 @@ sensor:
     json_attributes:
       - data
     value_template: 'last_changed: {{states.sensor.buienalarm_regen_data.last_changed}}'
-    scan_interval: 60
+    scan_interval: 240
 ```
 
  * Replace `<lat-3-decimals>` with your latitude. For example: `55.000`
- * Replace `<lon-3-decimals>` with your longtitude. For example: `5.000`
-
-
+ * Replace `<lon-3-decimals>` with your longitude. For example: `5.000`
+ > Attention: delete the `<>` characters. 
 
  ### Buienradar sensor configuration
  Add the following to `configuration.yaml`:
@@ -78,5 +78,17 @@ sensor:
     scan_interval: 240
 ```
  * Replace `<lat-2-decimals>` with your latitude. For example: `55.00`
- * Replace `<lon-2-decimals>` with your longtitude. For example: `5.00`
+ * Replace `<lon-2-decimals>` with your longitude. For example: `5.00`
+ > Attention: delete the `<>` characters. 
 
+ ### Advanced sensor configuration
+ Instead of manual configuring the latitude and longitude. There is an option to use the latitude and longitude that has been configured in Home Assistant.
+
+ #### Buienalarm sensor configuration
+ * Replace `<lat-3-decimals>` with your latitude. For example: `{{ state_attr("zone.home", "latitude") | round(3) }}`
+ * Replace `<lon-3-decimals>` with your longitude. For example: `{{ state_attr("zone.home", "longitude") | round(3) }}`
+ > Attention: delete the `<>` characters. 
+ #### Buienradar sensor configuration
+ * Replace `<lat-2-decimals>` with your latitude. For example: `{{ state_attr("zone.home", "latitude") | round(2) }}`
+ * Replace `<lon-2-decimals>` with your longitude. For example: `{{ state_attr("zone.home", "longitude") | round(2) }}`
+ > Attention: delete the `<>` characters.
