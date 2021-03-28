@@ -34,15 +34,15 @@ Via the interface:
 ```yaml
 type: 'custom:neerslag-card'
 title: Neerslag
-entity: sensor.buienalarm_regen_data
+entity: sensor.neerslag_buienalarm_regen_data
 ```
 #### Using two sensors:
 ```yaml
 type: 'custom:neerslag-card'
 title: Neerslag
 entities:
-  - sensor.buienalarm_regen_data
-  - sensor.buienradar_regen_data
+  - sensor.neerslag_buienalarm_regen_data
+  - sensor.neerslag_buienradar_regen_data
 ```
 
  ## 2. Setup Buienalarm and/or Buienradar custom sensor
@@ -54,7 +54,7 @@ entities:
 sensor:
   - platform: command_line
     command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=<lat-3-decimals>&lon=<lon-3-decimals>&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
-    name: Buienalarm_Regen_Data
+    name: Neerslag_Buienalarm_Regen_Data
     json_attributes:
       - data
     value_template: 'last_changed: {{states.sensor.buienalarm_regen_data.last_changed}}'
@@ -72,7 +72,7 @@ sensor:
 sensor:
   - platform: command_line
     command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://gpsgadget.buienradar.nl/data/raintext?lat=<lat-2-decimals>&lon=<lon-2-decimals>&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":\"'+dataRequest+'\"}';    print(data);"
-    name: Buienradar_Regen_Data
+    name: Neerslag_Buienradar_Regen_Data
     json_attributes:
       - data
     value_template: 'last_changed: {{states.sensor.buienradar_regen_data.last_changed}}'

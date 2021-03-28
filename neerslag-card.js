@@ -2,8 +2,6 @@ const LitElement = customElements.get("hui-masonry-view") ? Object.getPrototypeO
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-
-
 // class CombiCardEditor extends LitElement {
 
 // 	setConfig(config) {
@@ -33,7 +31,7 @@ class CombiCard extends LitElement {
 
 	static getStubConfig() {
 		return {
-			entity: "sensor.buienalarm_regen_data",
+			entity: "sensor.neerslag_buienalarm_regen_data",
 			title: "Neerslag"
 		}
 	}
@@ -526,15 +524,15 @@ class CombiCard extends LitElement {
 		}
 
 		// data can be buienalarm or buienradar
-		if (entity == "sensor.buienradar_regen_data") {
+		if (entity == "sensor.neerslag_buienradar_regen_data") {
 			return this.formatBuienradarData(data);
 		}
 
-		if (entity == "sensor.buienalarm_regen_data_oud") {
+		if (entity == "sensor.neerslag_buienalarm_regen_data_oud") {
 			return this.formatBuienalarmData(data);
 		}
 
-		if (entity == "sensor.buienalarm_regen_data") {
+		if (entity == "sensor.neerslag_buienalarm_regen_data") {
 			return this.formatBuienalarmDataAndere(data);
 		}
 	}
@@ -676,7 +674,7 @@ window.customCards.push({
 });
 
 console.info(
-	`%c NEERSLAG-CARD %c 2021.27.02.1`,
+	`%c NEERSLAG-CARD %c 2021.28.03.1`,
 	"Color: white; font-weight: bold; background: red;",
 	""
 );
