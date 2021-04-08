@@ -57,7 +57,7 @@ sensor:
     name: Neerslag_Buienalarm_Regen_Data
     json_attributes:
       - data
-    value_template: 'last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed}}'
+    value_template: 'last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed | default(now())}}'
     scan_interval: 240
 ```
 
@@ -75,7 +75,7 @@ sensor:
     name: Neerslag_Buienradar_Regen_Data
     json_attributes:
       - data
-    value_template: 'last_changed: {{states.sensor.neerslag_buienradar_regen_data.last_changed}}'
+    value_template: 'last_changed: {{states.sensor.neerslag_buienradar_regen_data.last_changed | default(now())}}'
     scan_interval: 240
 ```
  * Replace `<lat-2-decimals>` with your latitude. For example: `55.00`
