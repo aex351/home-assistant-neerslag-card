@@ -5,6 +5,7 @@
 
  The graph will auto-scale (auto-zoom) depending on the amount of  rain. You can interact with the graph to see how much rain will fall on a specific moment. This card is fully functional on both  mobile as well as desktop.
 
+
 ## Features
 * Display Buienalarm and/or Buienradar in one graph;
 * Fully functional on both desktop and mobile (includes mobile app);
@@ -17,13 +18,30 @@
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
 
 ## Installation overview
-The Neerslag card installation consists out of two actions:
-1) Adding the the Neerslag Card to your dashboard
-2) Configuring the Buienalarm and/or Buienradar custom sensor via `configuration.yaml`
+The Neerslag card installation consists out of three actions:
+1) Install via HACS or manual;
+2) Adding the the Neerslag Card to your dashboard
+3) Configuring the Buienalarm and/or Buienradar custom sensor via `configuration.yaml`
 
 > Note: Home Assistant requires a restart after making changes in: `configuration.yaml`.
 
-## 1. Adding the Neerslag Card to your dashboard
+## 1a. Install via HACS (recommended)
+This is the recommended option and also allows for easy updates.
+1) Find this repository in HACS;
+2) Add the Neerslag Card in the Home Assistant Community Store as front-end plugin.
+
+For updates go to the Community Store (HACS) and click update
+
+## 1b. Manual install (with HACS installed)
+Not recommended, you will need to track updates manually by browsing to the repository;
+1) Download the latest release of the Neerslag Card from this repository;
+2) In Home Assistant, create the folder `config/www/community` if it does not exist;
+3) Add the Neerslag Card to the `community` folder. (i.e. `community/neerslag-card/`);
+4) Add the Neerslag Card as a resource in Home Assistant (config/lovelace/resources);
+5) Using the following details as resource: `/hacsfiles/neerslag-card/neerslag-card.js` as Javascript module.
+
+For updates: repeat step 1 to 3. Home Assistant will not delete any settings.
+## 2. Adding the Neerslag Card to your dashboard
 Via the interface:
 1) Go in to "Configure UI mode" on your dashboard
 2) Click on "Add Cards" and find the "Neerslag card" in the list of cards
@@ -45,7 +63,7 @@ entities:
   - sensor.neerslag_buienradar_regen_data
 ```
 
- ## 2. Setup Buienalarm and/or Buienradar custom sensor
+ ## 3. Setup Buienalarm and/or Buienradar custom sensor
  
  ### Buienalarm sensor configuration
  Add the following to `configuration.yaml`:
