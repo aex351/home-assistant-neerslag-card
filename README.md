@@ -1,6 +1,8 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 # Neerslag Card
+ > Recommendation: Use the `Neerslag App` or migrate from the `Neerslag Card` to the `Neerslag App` (all-one-package: sensors + card). The Neerslag App is currently not part of the default HACS repository, so you can add this manually to HACS or wait for it to become available in the default HACS repository.
+
  Display rain forecast using Buienalarm and/or Buienradar sensor data.
 
  The graph will auto-scale (auto-zoom) depending on the amount of  rain. You can interact with the graph to see how much rain will fall on a specific moment. This card is fully functional on both  mobile as well as desktop.
