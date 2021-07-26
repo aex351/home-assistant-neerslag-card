@@ -65,6 +65,13 @@ entities:
   - sensor.neerslag_buienradar_regen_data
 ```
 
+### Advanced configuration options:
+Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Autozoom will continue on extreme rainfall.  
+```yaml
+autozoom: false
+```
+
+
  ## 3. Setup Buienalarm and/or Buienradar custom sensor
  
  ### Buienalarm sensor configuration
