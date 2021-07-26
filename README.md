@@ -66,7 +66,7 @@ entities:
 ```
 
 ### Advanced configuration options:
-Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Autozoom will continue on extreme rainfall.  
+Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Auto zoom will continue on extreme rainfall.  
 ```yaml
 autozoom: false
 ```
