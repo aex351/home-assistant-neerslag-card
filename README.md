@@ -22,8 +22,8 @@
 ## Installation overview
 The Neerslag card installation consists out of three actions:
 1) Install via HACS or manual;
-2) Adding the the Neerslag Card to your dashboard
-3) Configuring the Buienalarm and/or Buienradar custom sensor via `configuration.yaml`
+2) Configuring the Buienalarm and/or Buienradar custom sensor via `configuration.yaml`
+3) Adding the the Neerslag Card to your dashboard
 
 > Note: Home Assistant requires a restart after making changes in: `configuration.yaml`.
 
@@ -43,36 +43,7 @@ Not recommended, you will need to track updates manually by browsing to the repo
 5) Using the following details as resource: `/hacsfiles/neerslag-card/neerslag-card.js` as Javascript module.
 
 For updates: repeat step 1 to 3. Home Assistant will not delete any settings.
-## 2. Adding the Neerslag Card to your dashboard
-Via the interface:
-1) Go in to "Configure UI mode" on your dashboard
-2) Click on "Add Cards" and find the "Neerslag card" in the list of cards
-
-### Configuration options:
-
-#### Using one sensor:
-```yaml
-type: 'custom:neerslag-card'
-title: Neerslag
-entity: sensor.neerslag_buienalarm_regen_data
-```
-#### Using two sensors:
-```yaml
-type: 'custom:neerslag-card'
-title: Neerslag
-entities:
-  - sensor.neerslag_buienalarm_regen_data
-  - sensor.neerslag_buienradar_regen_data
-```
-
-### Advanced configuration options:
-Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Auto zoom will continue on extreme rainfall.  
-```yaml
-autozoom: false
-```
-
-
- ## 3. Setup Buienalarm and/or Buienradar custom sensor
+ ## 2. Setup Buienalarm and/or Buienradar custom sensor
  
  ### Buienalarm sensor configuration
  Add the following to `configuration.yaml`:
@@ -120,3 +91,31 @@ sensor:
  * Replace `<lat-2-decimals>` with your latitude. For example: `{{state_attr("zone.home", "latitude") | round(2)}}`
  * Replace `<lon-2-decimals>` with your longitude. For example: `{{state_attr("zone.home", "longitude") | round(2)}}`
  > Attention: delete the `<>` characters.
+
+ ## 3. Adding the Neerslag Card to your dashboard
+Via the interface:
+1) Go in to "Configure UI mode" on your dashboard
+2) Click on "Add Cards" and find the "Neerslag card" in the list of cards
+
+### Configuration options:
+
+#### Using one sensor:
+```yaml
+type: 'custom:neerslag-card'
+title: Neerslag
+entity: sensor.neerslag_buienalarm_regen_data
+```
+#### Using two sensors:
+```yaml
+type: 'custom:neerslag-card'
+title: Neerslag
+entities:
+  - sensor.neerslag_buienalarm_regen_data
+  - sensor.neerslag_buienradar_regen_data
+```
+
+### Advanced configuration options:
+Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Auto zoom will continue on extreme rainfall.  
+```yaml
+autozoom: false
+```
