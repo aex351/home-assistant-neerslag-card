@@ -14,7 +14,7 @@
 * Graph will auto zoom depending on the amount of rain;
 * Customizing the card title;
 * Hover with mouse / finger to read details of rain;
-* Dutch language;
+* Dutch / English language;
 * Use Home Assistant configured location.
 
 ![Example](https://github.com/aex351/home-assistant-neerslag-card/raw/main/documentation/example.png)
