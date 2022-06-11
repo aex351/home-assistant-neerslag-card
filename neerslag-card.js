@@ -82,7 +82,7 @@ class CombiCard extends LitElement {
 			licht : 'Licht',
 			matig : 'Matig',
 			zwaar : 'Zwaar',
-			geenDataBeschikbaar: 'Geen sensor data beschikbaar'
+			geenDataBeschikbaar: 'Geen sensor data beschikbaar',
 		},
 		en : {
 			regenMmUur : 'Rain (mm / uur)',
@@ -90,15 +90,15 @@ class CombiCard extends LitElement {
 			licht : 'Light',
 			matig : 'Moderate',
 			zwaar : 'Heavy',
-			geenDataBeschikbaar: 'No sensor data available'
+			geenDataBeschikbaar: 'No sensor data available',
 		},
 		fr : {
-			regenMmUur : "Pluie (mm / h)",
-			regenvalVoorspelling : "Prévisions de précipitations",
-			licht : "Légère",
-			matig : "Moyenne",
-			zwaar : "Forte",
-			geenDataBeschikbaar : "Pas de données disponibles",
+			regenMmUur : 'Pluie (mm / hr)',
+			regenvalVoorspelling : 'Prévision de précipitations',
+			licht : 'Légère',
+			matig : 'Moyenne',
+			zwaar : 'Forte',
+			geenDataBeschikbaar: 'Pas de données du senseur disponibles',
 		}
 	}
 
