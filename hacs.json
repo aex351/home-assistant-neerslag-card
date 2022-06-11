@@ -2,6 +2,5 @@
     "name": "Neerslag Card",
     "render_readme": true,
     "country": ["NL", "BE"],
-    "domains": ["sensor"],
     "filename": "neerslag-card.js"
 }
