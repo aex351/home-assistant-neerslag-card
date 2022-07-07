@@ -862,7 +862,7 @@ window.customCards.push({
 });
 
 console.info(
-	`%c NEERSLAG-CARD %c 2022.07.7.1`,
+	`%c NEERSLAG-CARD %c 2022.07.07.1`,
 	"Color: white; font-weight: bold; background: red;",
 	""
 );
