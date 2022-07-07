@@ -1,4 +1,4 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 
 # Neerslag Card
  > Recommendation: Use the `Neerslag App` or migrate from the `Neerslag Card` to the `Neerslag App` (all-one-package: sensors + card). The Neerslag App is part of the default HACS repository.
