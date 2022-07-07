@@ -115,7 +115,10 @@ entities:
 ```
 
 ### Advanced configuration options:
-Graph auto zoom can be partially disabled. The graph will start zoomed out. This is usefull for when you want an initial fixed size graph. Auto zoom will continue on extreme rainfall.  
+Enable auto zoom to have the graph dynamically zoom in or out depending on the amount of rainfall. 
+
+Note: By default auto zoom is disabled. Which gives the graph a fixed starting position displaying low, medium and heavy rainfall. Auto zoom will continue on extreme rainfall. Before version 2022.07.7.1 this setting was set to true.
+
 ```yaml
 autozoom: false
 ```
