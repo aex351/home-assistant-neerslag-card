@@ -49,14 +49,15 @@ For updates: repeat step 1 to 3. Home Assistant will not delete any settings.
  Add the following to `configuration.yaml`:
 
 ```yaml
-sensor:
-  - platform: command_line
-    command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=<lat-3-decimals>&lon=<lon-3-decimals>&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
-    name: Neerslag_Buienalarm_Regen_Data
-    json_attributes:
+command_line:
+  - sensor:
+      name: Neerslag_Buienalarm_Regen_Data
+      command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=<lat-2-decimals>&lon=<lon-2-decimals>&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
+      json_attributes:
       - data
-    value_template: 'last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed | default(now())}}'
-    scan_interval: 240
+      value_template: "last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed}}"
+      scan_interval: 240  
+
 ```
 
  * Replace `<lat-3-decimals>` with your latitude. For example: `55.000`
@@ -67,14 +68,14 @@ sensor:
  ### Buienradar sensor configuration
  Add the following to `configuration.yaml`:
 ```yaml
-sensor:
-  - platform: command_line
-    command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://gpsgadget.buienradar.nl/data/raintext?lat=<lat-2-decimals>&lon=<lon-2-decimals>&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":\"'+dataRequest+'\"}';    print(data);"
-    name: Neerslag_Buienradar_Regen_Data
-    json_attributes:
+command_line:
+  - sensor:
+      name: Neerslag_Buienradar_Regen_Data
+      command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://gpsgadget.buienradar.nl/data/raintext?lat=<lat-2-decimals>&lon=<lon-2-decimals>&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":\"'+dataRequest+'\"}';    print(data);"
+      json_attributes:
       - data
-    value_template: 'last_changed: {{states.sensor.neerslag_buienradar_regen_data.last_changed | default(now())}}'
-    scan_interval: 240
+      value_template: "last_changed: {{states.sensor.neerslag_buienradar_regen_data.last_changed}}"
+      scan_interval: 240 
 ```
  * Replace `<lat-2-decimals>` with your latitude. For example: `55.00`
  * Replace `<lon-2-decimals>` with your longitude. For example: `5.00`
@@ -83,14 +84,23 @@ sensor:
  ### Advanced sensor configuration
  Instead of manual configuring the latitude and longitude. There is an option to use the latitude and longitude that has been configured in Home Assistant.
 
- #### Buienalarm sensor configuration
- * Replace `<lat-3-decimals>` with your latitude. For example: `{{state_attr("zone.home", "latitude") | round(3, default="not available")}}`
- * Replace `<lon-3-decimals>` with your longitude. For example: `{{state_attr("zone.home", "longitude") | round(3, default="not available")}}`
- > Attention: delete the `<>` characters. 
- #### Buienradar sensor configuration
- * Replace `<lat-2-decimals>` with your latitude. For example: `{{state_attr("zone.home", "latitude") | round(2, default="not available")}}`
- * Replace `<lon-2-decimals>` with your longitude. For example: `{{state_attr("zone.home", "longitude") | round(2, default="not available")}}`
- > Attention: delete the `<>` characters.
+```yaml
+command_line:
+  - sensor:
+      name: Neerslag_Buienalarm_Regen_Data
+      command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat={{state_attr("zone.home", "latitude") | round(3, default="not available")}}&lon={{state_attr("zone.home", "longitude") | round(3, default="not available")}}&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
+      json_attributes:
+      - data
+      value_template: "last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed}}"
+      scan_interval: 240  
+  - sensor:
+      name: Neerslag_Buienradar_Regen_Data
+      command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://gpsgadget.buienradar.nl/data/raintext?lat={{state_attr("zone.home", "latitude") | round(2, default="not available")}}&lon={{state_attr("zone.home", "longitude") | round(2, default="not available")}}&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":\"'+dataRequest+'\"}';    print(data);"
+      json_attributes:
+      - data
+      value_template: "last_changed: {{states.sensor.neerslag_buienradar_regen_data.last_changed}}"
+      scan_interval: 240 
+```
 
  ## 3. Adding the Neerslag Card to your dashboard
 Via the interface:
