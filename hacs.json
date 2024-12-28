@@ -1,6 +1,7 @@
 {
     "name": "Neerslag Card",
+    "content_in_root": false,
     "render_readme": true,
     "country": ["NL", "BE"],
-    "filename": "neerslag-card.js"
+    "filename": "dist/neerslag-card.dist.js"
 }
